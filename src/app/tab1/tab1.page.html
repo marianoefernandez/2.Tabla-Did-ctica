@@ -1,17 +1,55 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <body style="background-color: rgb(0, 110, 255);">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <div style="text-align: left;" class="login">
+      <input class="cerrar" (click)="cerrarSesion()" type="image" src="../../assets/cerrar.png">
+    </div>
+  
+    <div class="tabla">
+      <div class="botones" >
+        <ion-fab class="idioma">
+          <ion-fab-button size="medium">
+            <input height="40px" width="40px" type="image" src={{imagenIdioma}}>
+          </ion-fab-button>
+          <ion-fab-list side="bottom">
+            <ion-fab-button>
+              <input (click)="cambiarIdioma('español')" height="40px" width="40px" type="image" src="../../assets/espania.png">
+            </ion-fab-button>
+            <ion-fab-button>
+              <input (click)="cambiarIdioma('portugues')" height="40px" width="40px" type="image" src="../../assets/portugal.png">
+            </ion-fab-button>
+            <ion-fab-button>
+              <input (click)="cambiarIdioma('ingles')" height="40px" width="40px" type="image" src="../../assets/ingles.png">
+            </ion-fab-button>
+          </ion-fab-list>
+        </ion-fab>
+  
+        <ion-fab class="tema">
+          <ion-fab-button size="medium">
+            <input height="40px" width="40px" type="image" src={{imagenTema}}>
+          </ion-fab-button>
+          <ion-fab-list side="bottom">
+            <ion-fab-button>
+              <input (click)="cambiarTema('colores')" height="40px" width="40px" type="image" src="../../assets/color.png">
+            </ion-fab-button>
+            <ion-fab-button>
+              <input (click)="cambiarTema('numeros')" height="40px" width="40px" type="image" src="../../assets/numeros.png">
+            </ion-fab-button>
+            <ion-fab-button>
+              <input (click)="cambiarTema('animales')" height="40px" width="40px" type="image" src="../../assets/animales.png">
+            </ion-fab-button>
+          </ion-fab-list>
+        </ion-fab>
+      </div>
+
+      <div *ngFor="let carta of matrizCartas[indiceTema]" class="carta">
+          <input (click)="elegirCarta(carta)" *ngIf="tema != 'colores'" type="image" class="imagen" src="{{carta.imagen}}" alt="">
+          <input (click)="elegirCarta(carta)" *ngIf="tema == 'colores'" [ngStyle] = "{background:carta.color}" type="button" class="imagen" alt="">
+      </div>
+    </div>
+
+  </body>
+
 </ion-content>

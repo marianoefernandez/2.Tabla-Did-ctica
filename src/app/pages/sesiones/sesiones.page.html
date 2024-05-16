@@ -1,0 +1,40 @@
+<body style="background-color: rgba(14, 14, 15, 0.794);">
+    <div class="form">
+        <div style="background-color: rgb(0, 68, 255); height: 20%;" class="username">
+            <p style="text-align: center; font-size:1em;">Bienvenido a la tabla didáctica</p>
+            <p style="text-align: center; font-size:4vh; max-width:90%; margin-left:5%">Por favor padre del niño/a inicie sesión con sus datos</p>
+        </div>
+
+        <div style="border:solid 1px black; height: 20%;" class="username" [hidden]="estado">
+          <input type="text" placeholder="CORREO" [(ngModel)]="email"/>
+        </div>
+
+        <div class="acceso" style="background-color: rgb(208, 208, 21); height: 20%;" [hidden]="!estado">
+            <span (click)="accesoRapido('invitado@invitado.com','222222')" >INVITADO</span>
+        </div>
+
+        <div style="  border:solid 1px black; height: 20%;" class="password" [hidden]="estado">
+          <input type="password" placeholder="CONTRASEÑA" [(ngModel)]="clave"/>
+        </div>
+
+        <div class="acceso" style="background-color: rgb(17, 128, 28); height: 20%;" [hidden]="!estado">
+            <span (click)="accesoRapido('usuario@usuario.com','333333')" >USUARIO 1</span>
+        </div>
+
+        <div class="login" style="height: 20%;" [hidden]="estado">
+          <span (click)="loguearse()">INICIAR AVENTURA</span>
+        </div>
+
+        <div class="acceso" style="background-color: rgb(255, 0, 0); height: 20%;" [hidden]="!estado">
+            <span (click)="accesoRapido('anonimo@anonimo.com','444444')" >USUARIO 2</span>
+        </div>
+
+        <div style="height: 20%;" class="acceso" [hidden]="estado" (click)="cambiarEstado()">
+            <span>ACCESO RÁPIDO</span>
+        </div>
+
+        <div style="height: 20%;" class="login" [hidden]="!estado" (click)="cambiarEstado()">
+            <span>USA TU CUENTA</span>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tabla didactica para niños</string>
+    <string name="title_activity_main">Tabla didactica para niños</string>
+    <string name="package_name">tabla.didactica</string>
+    <string name="custom_url_scheme">tabla.didactica</string>
+</resources>

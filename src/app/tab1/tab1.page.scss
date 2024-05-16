@@ -1,0 +1,121 @@
+.login {
+    background-color: orange;
+    display: table;
+    color:black; 
+    border:solid 1.5px black;
+    min-width: 100%;
+  }
+  
+  .login span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size:3em;
+    cursor: pointer;
+  }
+
+
+.tabla
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(17, 150, 232);
+    border: black 1.5px solid;
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width:400px) {
+        margin-top: 3.5vh; 
+    }
+
+    @media (max-height:400px) {
+        margin-top: 1.5vh;
+    }
+
+    height: 80vh;
+    min-height: 80vh;
+    max-height: 80vh;
+}
+
+.carta
+{
+    border-radius: 50%;
+    border: black 2.5px solid;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgba(243, 234, 234, 0.885);
+    @media (max-width:400px) {
+        height: 20vh;
+        width: 128px;   
+    }
+
+    @media (max-height:400px) {
+        height: 110px;
+        width: 140px; 
+    }
+    opacity: 0.85;
+}
+
+.botones
+{
+    width: 100%;
+}
+
+.carta:hover
+{
+    opacity: 1;
+    filter: brightness(1);
+}
+
+.cerrar
+{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+    @media (max-width:400px) {
+        width:10vh;
+        height:8vh;  
+    }
+
+    @media (max-height:400px) {
+        width:12vh;
+        height:12vh;
+    }
+}
+
+.imagen
+{
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    border-radius: 50%;
+}
+
+.cerrar:hover
+{
+    filter: invert(100%);
+}
+
+.tema
+{
+    position: absolute;
+    right: 85%;
+}
+
+.idioma
+{
+    position: absolute;
+    left: 85%;
+}
+
+.botones
+{
+    margin-bottom: 5%;
+}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AutenticacionService } from '../servicios/autenticacion.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(public autenticador:AutenticacionService) 
+  {
+
+  }
+
+  async ngOnInit()
+  {
+    this.autenticador.usuarioActual =  await firstValueFrom(this.autenticador.obtenerUsuarioLogueado());
+  }
 
 }
